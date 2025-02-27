@@ -1,17 +1,13 @@
-import type { NextConfig } from "next";
+// next.config.js
 
-const nextConfig: NextConfig = {
-  /* config options here */
+module.exports = {
   images: {
     domains: ["cdn.sanity.io"],
   },
-};
 
-export default nextConfig;
-// next.config.js
-module.exports = {
   experimental: {
-    appDir: true, // Enable app directory if you're using it
+    appDir: true,
   },
+
   reactStrictMode: true,
 };
