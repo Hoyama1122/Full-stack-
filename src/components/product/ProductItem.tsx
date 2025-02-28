@@ -40,9 +40,19 @@ const ProductItem = ({ product }: ProductItemProps) => {
               ${((product.price || 0) * 5).toFixed(2)}
             </span>
           </div>
-          <div></div>
-          <button>GRAB IT NOW!</button>
-          <div></div>
+          <div className="text-xs text-green-500 font-semibold mb-2">
+            {" "}
+            🔥{" "}
+            {100 +
+              Math.abs(
+                product._id
+                  .split("")
+                  .reduce((acc, char) => acc + char.charCodeAt(0), 0) % 500
+              )}
+            + sold in last 24h
+          </div>
+          <button className=" w-full bg-gradient-to-r from-red-500 to-orange-500 text-white py-2 rounded-full text-sm font-bold hover:brightness-110 transition-all">GRAB IT NOW!</button>
+          <div className="text-xs text-red-500 text-center mt-1 animate-pulse">⚡ Limited time offer!</div>
         </div>
       </div>
     </div>
